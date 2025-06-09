@@ -18,3 +18,4 @@
     2. Открыть окно второго терминала и ввести комбинацию клавиш CTRL+C чтобы остановить jar файл.
     3. Открыть окно первого терминала и ввести комбинацию клавиш CTRL+C чтобы остановить Docker, 
         далее ввести docker-compose down для выгрузки контейнера.
+[![Java CI with Gradle](https://github.com/Yaroslav-neto/Diplom_Test_Automation/actions/workflows/manual.yml/badge.svg)](https://github.com/Yaroslav-neto/Diplom_Test_Automation/actions/workflows/manual.yml)
