@@ -13,7 +13,7 @@
 
 #### Ссылки на репорты:
 
-[Allure_Report.html](Reports/Allure_Report/Allure_Report.html)
+![Screenshot_1.png](Reports/Allure_Report/Screenshot_1.png)
 
-[Gradle_Test_Summary.html](Reports/Gradle_Report/Gradle_Test_Summary.html)
+![Screenshot_2.png](Reports/Gradle_Report/Screenshot_2.png)
 
