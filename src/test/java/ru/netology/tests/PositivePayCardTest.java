@@ -23,7 +23,7 @@ public class PositivePayCardTest {
     void setup() {
         SQLHelper.cleanDatabase();
         Configuration.holdBrowserOpen = false;
-        open("http://localhost:8080");
+        open(System.getProperty("application.url"));
         dashboardPage = new DashboardPage();
     }
 

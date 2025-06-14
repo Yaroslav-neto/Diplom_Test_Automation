@@ -11,8 +11,13 @@ public class ApiHelper {
     public static HttpResponse<String> sendPostRequestPay(String json) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
 
+        String payUrl = System.getProperty("pay.url");
+        if (payUrl == null) {
+            throw new IllegalArgumentException("Не задан URI PAY.");
+        }
+
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/api/v1/pay"))
+                .uri(URI.create(payUrl))
                 .header("Content-Type", "application/json")
                 .POST(BodyPublishers.ofString(json))
                 .build();
@@ -23,8 +28,13 @@ public class ApiHelper {
     public static HttpResponse<String> sendPostRequestPayCredit(String json) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
 
+        String creditUrl = System.getProperty("credit.url");
+        if (creditUrl == null) {
+            throw new IllegalArgumentException("Не задан URI CREDIT.");
+        }
+
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/api/v1/credit"))
+                .uri(URI.create(creditUrl))
                 .header("Content-Type", "application/json")
                 .POST(BodyPublishers.ofString(json))
                 .build();

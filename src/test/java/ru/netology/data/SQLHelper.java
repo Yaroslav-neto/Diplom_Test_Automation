@@ -2,7 +2,6 @@ package ru.netology.data;
 
 import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,8 +14,15 @@ public class SQLHelper {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "app", "pass");
+        String url = System.getProperty("db.url");
+        String user = System.getProperty("db.user");
+        String password = System.getProperty("db.password");
+
+        if (url == null || user == null || password == null) {
+            throw new IllegalArgumentException("Не задан(ы) параметр(ы) подключения к БД");
+        }
+
+        return DriverManager.getConnection(url, user, password);
     }
 
     @SneakyThrows

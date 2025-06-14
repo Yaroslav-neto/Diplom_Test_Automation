@@ -39,5 +39,10 @@ test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
     systemProperty 'db.url', System.getProperty('db.url', "jdbc:mysql://localhost:3306/app")
+    systemProperty 'db.user', System.getProperty('db.user', "app")
+    systemProperty 'db.password', System.getProperty('db.password', "pass")
+    systemProperty 'application.url', System.getProperty('application.url', "http://localhost:8080")
+    systemProperty 'pay.url', System.getProperty('pay.url', "http://localhost:8080/api/v1/pay")
+    systemProperty 'credit.url', System.getProperty('credit.url', "http://localhost:8080/api/v1/credit")
     systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
 }
